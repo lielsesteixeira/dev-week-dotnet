@@ -16,7 +16,7 @@ public class DatabaseContext : DbContext
     public DbSet<Person> Persons { get; set; }
     public DbSet<Contract> Contracts { get; set; }
     
-    protected void onModelCreating(
+    protected override void OnModelCreating(
         ModelBuilder builder){
             builder.Entity<Person>( table => {
                 table.HasKey( e => e.Id);
@@ -25,8 +25,9 @@ public class DatabaseContext : DbContext
                     .WithOne()
                     .HasForeignKey(c => c.PersonId);
             });
+
             builder.Entity<Contract>( table => {
-                table.HasKey(e => e.DocId);
+                table.HasKey(e => e.Id);
             });
         }
 }

@@ -13,6 +13,9 @@ builder.Services
     .UseInMemoryDatabase("dbContracts")
 );
 
+//new object, return new instance DatabaseContext
+builder.Services
+.AddScoped<DatabaseContext, DatabaseContext>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

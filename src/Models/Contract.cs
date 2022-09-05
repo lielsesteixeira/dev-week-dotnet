@@ -1,6 +1,7 @@
 namespace src.Models;
 public class Contract
 {
+    public int Id { get; set; }
     public string DocId { get; set; }
     public double Price { get; set; }
     public DateTime CreateAt { get; set; }
@@ -17,11 +18,11 @@ public class Contract
     }
 
     public Contract(
-        string TokenID, 
+        string TokenId,
         double Price
         )
     {
-        this.DocId = TokenID;
+        this.DocId = TokenId;
         this.Price = Price;
         this.CreateAt = DateTime.Now;
         this.StatusPayment = false;

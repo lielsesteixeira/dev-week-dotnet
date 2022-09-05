@@ -11,7 +11,6 @@ public class Person
     
     public Person()
     {
-        this.Id = 1;
         this.Name = "John Doe";
         this.Doc = "0000000";
         this.Contracts = new List<Contract>();
